@@ -1,0 +1,59 @@
+<html ng-app="app" ng-controller="insertNewContactController">
+    <head>
+        <title>Inserir Novo Contato</title>
+        <link rel="stylesheet" type="text/css" href="webjars/Semantic-UI/2.2.10/semantic.min.css" />
+    </head>
+    <body>
+        <div style="margin-left: 10%; margin-top: 5%; width: 80%;">
+            <div class="ui top attached tabular menu">
+                <a class="item" ng-click="openIndexPage()">
+                    Lista de Contatos
+                </a>
+                <a class="active item">
+                    Cadastrar Novo Contato
+                </a>
+            </div>
+            <div class="ui clearing segment">
+                <form class="ui form">
+                    <div class="field">
+                        <label>Nome</label>
+                    </div>
+                    <div class="inline fields">
+                        <div class="eight wide field">
+                            <div class="ui input">
+                                <input type="text" ng-model="contact.name">
+                            </div>
+                        </div>
+                        <div ng-if="messages.name !== undefined" class="eight wide field">
+                            <div class="ui red left pointing label">
+                                {{ messages.name }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Telefone</label>
+                    </div>
+                    <div class="inline fields">
+                        <div class="eight wide field">
+                            <div class="ui input">
+                                <input type="text" ng-model="contact.phone" placeholder="(11) 11111-1111">
+                            </div>
+                        </div>
+                        <div ng-if="messages.phone !== undefined" class="eight wide field">
+                            <div class="ui red left pointing label">
+                                {{ messages.phone }}
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="ui right floated green button" ng-click="insert()">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+        <script src="webjars/jquery/3.3.1-1/jquery.min.js" type="text/javascript"></script>
+        <script src="webjars/angularjs/1.6.9/angular.min.js" type="text/javascript"></script>
+        <script src="webjars/Semantic-UI/2.2.10/semantic.min.js" type="text/javascript"></script>
+        <script src="js/app.js" type="text/javascript"></script>
+        <script src="js/controller/insert_new_contact_controller.js" type="text/javascript"></script>
+        <script src="js/service/contact_service.js" type="text/javascript"></script>
+    </body>
+</html>
